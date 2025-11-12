@@ -1,0 +1,11 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar";
+import AppointmentCalendar from "../components/AppointmentCalendar";
+---
+
+<Layout>
+	<Navbar client:load />
+	<AppointmentCalendar client:load />
+</Layout>
+

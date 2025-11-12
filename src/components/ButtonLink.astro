@@ -1,0 +1,33 @@
+---
+interface Props {
+  href: string;
+  variant?: "default" | "outline";
+  size?: "default" | "lg";
+  class?: string;
+}
+
+const {
+  href,
+  variant = "default",
+  size = "default",
+  class: className = "",
+} = Astro.props;
+
+const variantClasses = {
+  default: "text-[hsl(var(--primary-foreground))] hover:opacity-90",
+  outline:
+    "border border-[hsl(var(--input))] bg-[hsl(var(--background))] hover:bg-[hsl(var(--accent))] hover:text-[hsl(var(--accent-foreground))]",
+};
+
+const sizeClasses = {
+  default: "h-10 px-4 py-2",
+  lg: "h-11 px-8 py-6 text-lg",
+};
+---
+
+<a
+  href={href}
+  class={`inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
+>
+  <slot />
+</a>
