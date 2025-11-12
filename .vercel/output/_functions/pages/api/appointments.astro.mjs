@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { P as PrismaClient } from '../../chunks/client_DX-mBhl0.mjs';
+import { P as PrismaClient } from '../../chunks/client_BC9AZvaC.mjs';
 export { renderers } from '../../renderers.mjs';
 
 const prerender = false;
